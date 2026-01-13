@@ -61,7 +61,7 @@ plt.show()
 
 plt.figure(figsize=(10, 6))
 feat_importances = pd.Series(model.feature_importances_, index=X.columns)
-feat_importances.nlargest(10).plot(kind='barh', color='teal') # نجيب أهم 10
+feat_importances.nlargest(10).plot(kind='barh', color='teal')
 plt.title('Top 10 Features for Malware Detection')
 plt.xlabel('Importance Score')
 plt.show()
@@ -69,5 +69,6 @@ plt.show()
 joblib.dump(model, 'Random_Forest_model.pkl')
 model_columns = list(X.columns)
 joblib.dump(model_columns, 'Random_Forest_model_columns.pkl')
+
 
 print("Model Saved Successfully")
